@@ -55,7 +55,7 @@ public class HomeController {
 	
 	/*
 	@GetMapping("ajax_result")
-	@ResponseBody //값을 보낼때 사용 없으면 ajax.xml에서 값 받아옴
+	@ResponseBody //값을 보낼때 사용. 없으면 ajax.xml에서 값 받아옴
 	public String ajax_result() {
 		return ++cnt + "";
 	}*/
