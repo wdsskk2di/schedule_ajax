@@ -45,6 +45,7 @@
 				//$("#result").text(data[0].name)	//네번째
 				console.log("성공")
 				
+				//네번째
 				showUsers(data);
 			},
 			error:function(){	//실패시
@@ -95,12 +96,15 @@
 		});
 	}
 	
+	//네번째
 	function showUsers(list) {
 		let html = "<table border='1'>";
 		html += "<tr><th>아이디</th><th>나이</th></tr>";
 		$.each(list, function(index, item){
 			html += "<tr>";
-			html += "<td>" + item.name +"</td>"
+							//다섯번째. 받아온 값 다른 function으로 넘기기.. 해당 값이름을 ""로 묶지 않으면 변수 인줄알고 user()에서 오류남
+			html += "<td style='cursor:pointer;' onclick='user(\""+
+					item.name+"\")'>" + item.name +"</td>"
 			html += "<td>" + item.age +"</td>"
 			html += "</tr>";			
 		})
@@ -108,6 +112,22 @@
 		$("#showUser").html(html);
 	}
 
+	//다섯번째
+	function user(userName) {
+		console.log(userName)
+		//여섯번째
+		$.ajax({
+			url:"user?name="+userName,
+			type: "GET",	//방식
+			success: function(data){	//성공시
+				$("#result").text(data)	//넘어온 값을 받아와 id가 result인 곳에 넣어줌
+				console.log("성공")
+			},
+			error:function(){	//실패시
+				console.log("실패")
+			}
+		});
+	}
 	</script>
 	
 </head>

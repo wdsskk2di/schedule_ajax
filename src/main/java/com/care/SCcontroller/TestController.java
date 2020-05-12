@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -44,4 +45,11 @@ public class TestController {
 	
 	@DeleteMapping(value="ajax_result", produces = "application/test;charset=utf8")
 	public String ajax_delete() {return "del: 삭제할 때";}
+	
+	//여섯번째
+	@GetMapping("user")
+	public String getUser(@RequestParam("name") String userName) {
+		System.out.println("넘겨받은 사용자 이름: "+userName);
+		return "test";
+	}
 }
