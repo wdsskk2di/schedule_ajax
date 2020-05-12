@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,9 +46,17 @@ public class HomeController {
 		return "ajax";
 	}
 	
+	/*
 	@RequestMapping("ajax_result")
 	@ResponseBody //값을 보낼때 사용
 	public String ajax_result() {
 		return ++cnt + "";
-	}
+	}*/
+	
+	/*
+	@GetMapping("ajax_result")
+	@ResponseBody //값을 보낼때 사용 없으면 ajax.xml에서 값 받아옴
+	public String ajax_result() {
+		return ++cnt + "";
+	}*/
 }
