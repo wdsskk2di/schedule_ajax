@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,10 +47,18 @@ public class TestController {
 	@DeleteMapping(value="ajax_result", produces = "application/test;charset=utf8")
 	public String ajax_delete() {return "del: 삭제할 때";}
 	
-	//여섯번째
+	/*여섯번째
 	@GetMapping("user")
 	public String getUser(@RequestParam("name") String userName) {
 		System.out.println("넘겨받은 사용자 이름: "+userName);
+		return "test";
+	}
+	*/
+	
+	//일곱번째. ?대신 /로.. 경로로 넘겨주는 값 받아오기
+	@GetMapping("user/{name}")	//{name}은 받아오는 값을 의미
+	public String getUser(@PathVariable String name) {	//{name}안의 name과 파라미터의 이름이 같아야 값을 가져온다
+		System.out.println("넘겨받은 사용자 이름: "+name);
 		return "test";
 	}
 }

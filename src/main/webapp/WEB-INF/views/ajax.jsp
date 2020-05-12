@@ -117,7 +117,8 @@
 		console.log(userName)
 		//여섯번째
 		$.ajax({
-			url:"user?name="+userName,
+			//url:"user?name="+userName,	//
+			url:"user/name="+userName,	// 일곱번째. ?대신 /를 넣으면 경로로 인식. 이를 이용해 값 넘겨주기
 			type: "GET",	//방식
 			success: function(data){	//성공시
 				$("#result").text(data)	//넘어온 값을 받아와 id가 result인 곳에 넣어줌
