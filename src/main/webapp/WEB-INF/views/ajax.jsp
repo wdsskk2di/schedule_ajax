@@ -117,7 +117,7 @@
 		console.log(userName)
 		//여섯번째
 		$.ajax({
-			//url:"user?name="+userName,	//
+			//url:"user?name="+userName,	//경로 뒤에 ?로 값을 넘겨주는 방식
 			url:"user/name="+userName,	// 일곱번째. ?대신 /를 넣으면 경로로 인식. 이를 이용해 값 넘겨주기
 			type: "GET",	//방식
 			success: function(data){	//성공시
